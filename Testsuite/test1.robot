@@ -2,8 +2,7 @@
 Library    Browser
 Resource    ../Resource/Keywords/Keywords_test1.robot
 Resource    ../Resource/Repository/Repository_test1.robot  
-Resource    ../Resource/Variable/Variable_test1.robot
-Resource    
+Resource    ../Resource/Variable/Variable_test1.robot 
 
 *** Test Case ***
 TC_001 Search Library Browser and open 1st link and verify page
