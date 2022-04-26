@@ -6,9 +6,10 @@ Open Webpage
 Input Text Box
     [Arguments]    ${Text}
     Type Text    ${txt_search}    ${Text}
-
+        
 Enter Search
     Press Keys    ${txt_search}    Enter
+    Sleep    5s
 
 Verify Text 1st Link
     [Arguments]    ${Text} 
@@ -17,7 +18,7 @@ Verify Text 1st Link
 
 Verify Text 3rd Link
     [Arguments]    ${Text}
-    ${name_3rdlink}    Get Text    ${lbl_3rdlink}
+    ${name_3rdlink}    Get Text    ${lbl_3rdlink}    
     Should Be Equal    ${name_3rdlink}    ${Text}    
 
 Click 1st Link
@@ -28,19 +29,37 @@ Click 3rd Link
     Wait For Elements State    ${lbl_3rdlink}
     Click    ${lbl_3rdlink}    delay=0.5s
 
-Click 3rd 4th and 5th Link
-    @{list_alllink}    Create List    ${lbl_3rdlink_link}    ${lbl_4thlink_link}     ${lbl_5thlink_link}
-    @{list_allurl}    Create List    ${url_3rdlink}    ${url_4thlink}    ${url_5thlink}
-    ${index}    Set Variable    0
+Click link 3rd 4th 5th and verify link 3rd 4th 5th
+    @{list_alllink}    Create List    ${lbl_2ndlink}    ${lbl_3rdlink}    ${lbl_4thlink}
+    @{list_allurl}    Create List    ${url_2ndlink}    ${url_3rdlink}    ${url_4thlink}
+    ${index}    Set Variable    0   
     FOR     ${link}    IN    @{list_alllink}
-        # Evaluate JavaScript    //*[@id="search"]    (elem) => elem.remove = "exp-outline"
-        Click    ${link}    delay=0.5s
-        Log    ${link}
-        Sleep    5s
-        ${url}    Get Url    ==    ${list_allurl}[${index}]
-        ${index}    Evaluate    ${index}+1         
-        Go Back
-        Wait For Elements State    ${txt_topsearch}
+        IF    '${link}' != '${lbl_4thlinkpa}'
+            Click    ${link}    delay=0.5s
+            Log    ${link}
+            Sleep    5s
+            ${url}    Get Url    ==    ${list_allurl}[${index}]     
+            Go Back
+            Wait For Elements State    ${txt_topsearch}
+        END
+        ${index}    Evaluate    ${index}+1      
+    END
+
+In range
+    @{list_alllink}    Create List    ${lbl_2ndlink}    ${lbl_3rdlink}    ${lbl_4thlink}
+    @{list_allurl}    Create List    ${url_2ndlink}    ${url_3rdlink}    ${url_4thlink}
+    ${len}    Get Length    ${list_alllink}
+    ${index}    Set Variable    0   
+    FOR     ${link}    IN RANGE    ${len}
+        IF    ${link} != 1  
+            Click    ${list_alllink}[${link}]    delay=0.5s
+            Log    ${list_alllink}[${link}]
+            Sleep    5s
+            ${url}    Get Url    ==    ${list_allurl}[${index}]     
+            Go Back
+            Wait For Elements State    ${txt_topsearch}
+        END
+        ${index}    Evaluate    ${index}+1      
     END
 
 Verify page Library Browser
@@ -54,3 +73,7 @@ Verify page Robot Framework
 Verify page Kasetsart University
     ${text_ku}    Get Text    ${lbl_title_nisit}
     Should Be Equal    ${text_ku}    เข้าใช้งานระบบลงทะเบียนนิสิต
+    
+Verify Text Search Result Webpage
+    ${text_ku}    Get Text    ${lbl_1stlink}
+    Should Be Equal    ${text_ku}    มหาวิทยาลัยเกษตรศาสตร์
