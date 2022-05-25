@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Rebot 4.1.3 (Python 3.10.2 on win32)" generated="20220426 18:21:48.165" rpa="false" schemaversion="2">
+<suite id="s1" name="Test1" source="C:\Users\Admin\OneDrive\เดสก์ท็อป\Test\Test1\Testsuite\test1.robot">
+<test id="s1-t1" name="TC_001 Search Library Browser and open 1st link and verify page">
+<kw name="Open Webpage" library="Keywords_test1">
+<kw name="New Browser" library="Browser">
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220426 17:39:06.568" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\Users\\Admin\\OneDrive\\\u0e40\u0e14\u0e2a\u0e01\u0e4c\u0e17\u0e47\u0e2d\u0e1b\\Test\\Test1\\Testsuite\\Result\\browser\\traces\\ec03a620-37e0-4b70-8860-03ee51891e5b"}</msg>
+<msg timestamp="20220426 17:39:17.931" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\Users\\Admin\\OneDrive\\เดสก์ท็อป\\Test\\Test1\\Testsuite\\Result\\browser\\traces\\ec03a620-37e0-4b70-8860-03ee51891e5b"}</msg>
+<status status="PASS" starttime="20220426 17:39:06.568" endtime="20220426 17:39:17.931"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220426 17:39:28.122" level="INFO">Successfully initialized new page object and opened url: https://www.google.co.th/</msg>
+<msg timestamp="20220426 17:39:28.122" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20220426 17:39:17.931" endtime="20220426 17:39:28.122"/>
+</kw>
+<status status="PASS" starttime="20220426 17:39:06.568" endtime="20220426 17:39:28.122"/>
+</kw>
+<kw name="Input Text Box" library="Keywords_test1">
+<arg>Library Browser</arg>
+<kw name="Type Text" library="Browser">
+<arg>${txt_search}</arg>
+<arg>${Text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220426 17:39:28.249" level="INFO">Types the text 'Library Browser' in the given field.</msg>
+<status status="PASS" starttime="20220426 17:39:28.249" endtime="20220426 17:39:29.087"/>
+</kw>
+<status status="PASS" starttime="20220426 17:39:28.249" endtime="20220426 17:39:29.092"/>
+</kw>
+<kw name="Enter Search" library="Keywords_test1">
+<kw name="Press Keys" library="Browser">
+<arg>${txt_search}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" starttime="20220426 17:39:29.097" endtime="20220426 17:39:29.782"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220426 17:39:34.793" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220426 17:39:29.783" endtime="20220426 17:39:34.793"/>
+</kw>
+<status status="PASS" starttime="20220426 17:39:29.097" endtime="20220426 17:39:34.793"/>
+</kw>
+<kw name="Verify Text 1st Link" library="Keywords_test1">
+<arg>Browser Library</arg>
+<kw name="Get Text" library="Browser">
+<var>${name_1stlink}</var>
+<arg>${lbl_1stlink}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20220426 17:39:34.907" level="INFO">${name_1stlink} = Browser Library</msg>
+<status status="PASS" starttime="20220426 17:39:34.797" endtime="20220426 17:39:34.907"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${name_1stlink}</arg>
+<arg>${Text}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220426 17:39:34.907" endtime="20220426 17:39:34.907"/>
+</kw>
+<status status="PASS" starttime="20220426 17:39:34.797" endtime="20220426 17:39:34.913"/>
+</kw>
+<kw name="Click 1st Link" library="Keywords_test1">
+<kw name="Wait For Elements State" library="Browser">
+<arg>${lbl_1stlink}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220426 17:39:34.980" level="INFO">Waited for Element with selector (//*[@id="rso"]/div//h3[@class="LC20lb MBeuO DKV0Md"])[1] at state visible</msg>
+<status status="PASS" starttime="20220426 17:39:34.930" endtime="20220426 17:39:34.980"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${lbl_1stlink}</arg>
+<arg>delay=0.5s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220426 17:39:34.980" endtime="20220426 17:39:36.157"/>
+</kw>
+<status status="PASS" starttime="20220426 17:39:34.930" endtime="20220426 17:39:36.157"/>
+</kw>
+<kw name="Verify page Library Browser" library="Keywords_test1">
+<kw name="Get Text" library="Browser">
+<var>${text_lb}</var>
+<arg>${lbl_title_browserlibrary}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20220426 17:39:38.607" level="INFO">${text_lb} = BROWSER LIBRARY</msg>
+<status status="PASS" starttime="20220426 17:39:36.649" endtime="20220426 17:39:38.607"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${text_lb}</arg>
+<arg>BROWSER LIBRARY</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220426 17:39:38.607" endtime="20220426 17:39:38.607"/>
+</kw>
+<status status="PASS" starttime="20220426 17:39:36.649" endtime="20220426 17:39:38.607"/>
+</kw>
+<status status="PASS" starttime="20220426 17:39:06.558" endtime="20220426 17:39:38.767"/>
+</test>
+<test id="s1-t2" name="TC_002 Search Robot Framework and open 1st link and verify page">
+<kw name="Open Webpage" library="Keywords_test1">
+<kw name="New Browser" library="Browser">
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220426 17:43:29.952" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\Users\\Admin\\OneDrive\\\u0e40\u0e14\u0e2a\u0e01\u0e4c\u0e17\u0e47\u0e2d\u0e1b\\Test\\Test1\\Testsuite\\Result\\browser\\traces\\346d8aca-d1c5-4978-b6a4-727dcd2c4770"}</msg>
+<msg timestamp="20220426 17:43:44.350" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\Users\\Admin\\OneDrive\\เดสก์ท็อป\\Test\\Test1\\Testsuite\\Result\\browser\\traces\\346d8aca-d1c5-4978-b6a4-727dcd2c4770"}</msg>
+<status status="PASS" starttime="20220426 17:43:29.952" endtime="20220426 17:43:44.350"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220426 17:43:54.258" level="INFO">Successfully initialized new page object and opened url: https://www.google.co.th/</msg>
+<msg timestamp="20220426 17:43:54.258" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20220426 17:43:44.350" endtime="20220426 17:43:54.258"/>
+</kw>
+<status status="PASS" starttime="20220426 17:43:29.948" endtime="20220426 17:43:54.263"/>
+</kw>
+<kw name="Input Text Box" library="Keywords_test1">
+<arg>Robot Framework</arg>
+<kw name="Type Text" library="Browser">
+<arg>${txt_search}</arg>
+<arg>${Text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220426 17:43:54.272" level="INFO">Types the text 'Robot Framework' in the given field.</msg>
+<status status="PASS" starttime="20220426 17:43:54.268" endtime="20220426 17:43:55.127"/>
+</kw>
+<status status="PASS" starttime="20220426 17:43:54.268" endtime="20220426 17:43:55.127"/>
+</kw>
+<kw name="Enter Search" library="Keywords_test1">
+<kw name="Press Keys" library="Browser">
+<arg>${txt_search}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" starttime="20220426 17:43:55.127" endtime="20220426 17:43:55.838"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220426 17:44:00.843" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220426 17:43:55.838" endtime="20220426 17:44:00.843"/>
+</kw>
+<status status="PASS" starttime="20220426 17:43:55.127" endtime="20220426 17:44:00.843"/>
+</kw>
+<kw name="Verify Text 1st Link" library="Keywords_test1">
+<arg>Robot Framework</arg>
+<kw name="Get Text" library="Browser">
+<var>${name_1stlink}</var>
+<arg>${lbl_1stlink}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20220426 17:44:01.607" level="INFO">${name_1stlink} = Robot Framework</msg>
+<status status="PASS" starttime="20220426 17:44:00.843" endtime="20220426 17:44:01.607"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${name_1stlink}</arg>
+<arg>${Text}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220426 17:44:01.607" endtime="20220426 17:44:01.633"/>
+</kw>
+<status status="PASS" starttime="20220426 17:44:00.843" endtime="20220426 17:44:01.633"/>
+</kw>
+<kw name="Click 1st Link" library="Keywords_test1">
+<kw name="Wait For Elements State" library="Browser">
+<arg>${lbl_1stlink}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220426 17:44:01.722" level="INFO">Waited for Element with selector (//*[@id="rso"]/div//h3[@class="LC20lb MBeuO DKV0Md"])[1] at state visible</msg>
+<status status="PASS" starttime="20220426 17:44:01.698" endtime="20220426 17:44:01.722"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${lbl_1stlink}</arg>
+<arg>delay=0.5s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220426 17:44:01.722" endtime="20220426 17:44:02.947"/>
+</kw>
+<status status="PASS" starttime="20220426 17:44:01.698" endtime="20220426 17:44:02.947"/>
+</kw>
+<kw name="Verify page Robot Framework" library="Keywords_test1">
+<kw name="Get Text" library="Browser">
+<var>${text_rf}</var>
+<arg>${lbl_title_introduction}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20220426 17:44:09.637" level="INFO">${text_rf} = INTRODUCTION</msg>
+<status status="PASS" starttime="20220426 17:44:02.947" endtime="20220426 17:44:09.637"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${text_rf}</arg>
+<arg>INTRODUCTION</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220426 17:44:09.637" endtime="20220426 17:44:09.637"/>
+</kw>
+<status status="PASS" starttime="20220426 17:44:02.947" endtime="20220426 17:44:09.637"/>
+</kw>
+<status status="PASS" starttime="20220426 17:43:29.938" endtime="20220426 17:44:09.720">*HTML* Test added from merged output.</status>
+</test>
+<test id="s1-t3" name="TC_003 Search Kasetsart and open 3rd link and verify page">
+<kw name="Open Webpage" library="Keywords_test1">
+<kw name="New Browser" library="Browser">
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220426 17:45:12.787" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\Users\\Admin\\OneDrive\\\u0e40\u0e14\u0e2a\u0e01\u0e4c\u0e17\u0e47\u0e2d\u0e1b\\Test\\Test1\\Testsuite\\Result\\browser\\traces\\803f3d12-a8cd-49fb-ac9a-e47687375f86"}</msg>
+<msg timestamp="20220426 17:45:23.450" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\Users\\Admin\\OneDrive\\เดสก์ท็อป\\Test\\Test1\\Testsuite\\Result\\browser\\traces\\803f3d12-a8cd-49fb-ac9a-e47687375f86"}</msg>
+<status status="PASS" starttime="20220426 17:45:12.773" endtime="20220426 17:45:23.450"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220426 17:45:33.522" level="INFO">Successfully initialized new page object and opened url: https://www.google.co.th/</msg>
+<msg timestamp="20220426 17:45:33.522" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20220426 17:45:23.450" endtime="20220426 17:45:33.522"/>
+</kw>
+<status status="PASS" starttime="20220426 17:45:12.758" endtime="20220426 17:45:33.522"/>
+</kw>
+<kw name="Input Text Box" library="Keywords_test1">
+<arg>Kasetsart University</arg>
+<kw name="Type Text" library="Browser">
+<arg>${txt_search}</arg>
+<arg>${Text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220426 17:45:33.522" level="INFO">Types the text 'Kasetsart University' in the given field.</msg>
+<status status="PASS" starttime="20220426 17:45:33.522" endtime="20220426 17:45:34.694"/>
+</kw>
+<status status="PASS" starttime="20220426 17:45:33.522" endtime="20220426 17:45:34.694"/>
+</kw>
+<kw name="Enter Search" library="Keywords_test1">
+<kw name="Press Keys" library="Browser">
+<arg>${txt_search}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" starttime="20220426 17:45:34.698" endtime="20220426 17:45:35.743"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220426 17:45:40.748" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220426 17:45:35.743" endtime="20220426 17:45:40.748"/>
+</kw>
+<status status="PASS" starttime="20220426 17:45:34.694" endtime="20220426 17:45:40.748"/>
+</kw>
+<kw name="Verify Text 3rd Link" library="Keywords_test1">
+<arg>Kasetsart University</arg>
+<kw name="Get Text" library="Browser">
+<var>${name_3rdlink}</var>
+<arg>${lbl_3rdlink}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20220426 17:45:41.155" level="INFO">${name_3rdlink} = Kasetsart University</msg>
+<status status="PASS" starttime="20220426 17:45:40.748" endtime="20220426 17:45:41.155"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${name_3rdlink}</arg>
+<arg>${Text}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220426 17:45:41.155" endtime="20220426 17:45:41.157"/>
+</kw>
+<status status="PASS" starttime="20220426 17:45:40.748" endtime="20220426 17:45:41.157"/>
+</kw>
+<kw name="Click 3rd Link" library="Keywords_test1">
+<kw name="Wait For Elements State" library="Browser">
+<arg>${lbl_3rdlink}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220426 17:45:41.247" level="INFO">Waited for Element with selector (//*[@id="rso"]/div//h3[@class="LC20lb MBeuO DKV0Md"])[3] at state visible</msg>
+<status status="PASS" starttime="20220426 17:45:41.171" endtime="20220426 17:45:41.247"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${lbl_3rdlink}</arg>
+<arg>delay=0.5s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220426 17:45:41.247" endtime="20220426 17:45:43.458"/>
+</kw>
+<status status="PASS" starttime="20220426 17:45:41.171" endtime="20220426 17:45:43.458"/>
+</kw>
+<kw name="Verify page Kasetsart University" library="Keywords_test1">
+<kw name="Get Text" library="Browser">
+<var>${text_ku}</var>
+<arg>${lbl_title_nisit}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20220426 17:45:47.432" level="INFO">${text_ku} = เข้าใช้งานระบบลงทะเบียนนิสิต</msg>
+<status status="PASS" starttime="20220426 17:45:43.667" endtime="20220426 17:45:47.432"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${text_ku}</arg>
+<arg>เข้าใช้งานระบบลงทะเบียนนิสิต</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220426 17:45:47.432" endtime="20220426 17:45:47.432"/>
+</kw>
+<status status="PASS" starttime="20220426 17:45:43.662" endtime="20220426 17:45:47.432"/>
+</kw>
+<status status="PASS" starttime="20220426 17:45:12.747" endtime="20220426 17:45:47.547">*HTML* Test added from merged output.</status>
+</test>
+<test id="s1-t4" name="TC_004 Search Kasetsart and open 3rd, 4th and 5th link">
+<kw name="Open Webpage" library="Keywords_test1">
+<kw name="New Browser" library="Browser">
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220426 18:16:27.789" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\Users\\Admin\\OneDrive\\\u0e40\u0e14\u0e2a\u0e01\u0e4c\u0e17\u0e47\u0e2d\u0e1b\\Test\\Test1\\Testsuite\\Result\\browser\\traces\\4dec5d43-4236-44b4-8eee-3f0be227ce42"}</msg>
+<msg timestamp="20220426 18:16:39.279" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\Users\\Admin\\OneDrive\\เดสก์ท็อป\\Test\\Test1\\Testsuite\\Result\\browser\\traces\\4dec5d43-4236-44b4-8eee-3f0be227ce42"}</msg>
+<status status="PASS" starttime="20220426 18:16:27.789" endtime="20220426 18:16:39.279"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220426 18:16:48.651" level="INFO">Successfully initialized new page object and opened url: https://www.google.co.th/</msg>
+<msg timestamp="20220426 18:16:48.651" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20220426 18:16:39.279" endtime="20220426 18:16:48.651"/>
+</kw>
+<status status="PASS" starttime="20220426 18:16:27.789" endtime="20220426 18:16:48.651"/>
+</kw>
+<kw name="Input Text Box" library="Keywords_test1">
+<arg>Kasetsart University</arg>
+<kw name="Type Text" library="Browser">
+<arg>${txt_search}</arg>
+<arg>${Text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220426 18:16:48.763" level="INFO">Types the text 'Kasetsart University' in the given field.</msg>
+<status status="PASS" starttime="20220426 18:16:48.763" endtime="20220426 18:16:49.798"/>
+</kw>
+<status status="PASS" starttime="20220426 18:16:48.763" endtime="20220426 18:16:49.798"/>
+</kw>
+<kw name="Enter Search" library="Keywords_test1">
+<kw name="Press Keys" library="Browser">
+<arg>${txt_search}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" starttime="20220426 18:16:49.849" endtime="20220426 18:16:50.475"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220426 18:16:55.479" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220426 18:16:50.475" endtime="20220426 18:16:55.479"/>
+</kw>
+<status status="PASS" starttime="20220426 18:16:49.849" endtime="20220426 18:16:55.479"/>
+</kw>
+<kw name="In range" library="Keywords_test1">
+<kw name="Create List" library="BuiltIn">
+<var>@{list_alllink}</var>
+<arg>${lbl_2ndlink}</arg>
+<arg>${lbl_3rdlink}</arg>
+<arg>${lbl_4thlink}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220426 18:16:55.484" level="INFO">@{list_alllink} = [ (//*[@id="rso"]/div//h3[@class="LC20lb MBeuO DKV0Md"])[2] | (//*[@id="rso"]/div//h3[@class="LC20lb MBeuO DKV0Md"])[3] | (//*[@id="rso"]/div//h3[@class="LC20lb MBeuO DKV0Md"])[4] ]</msg>
+<status status="PASS" starttime="20220426 18:16:55.484" endtime="20220426 18:16:55.484"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{list_allurl}</var>
+<arg>${url_2ndlink}</arg>
+<arg>${url_3rdlink}</arg>
+<arg>${url_4thlink}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220426 18:16:55.484" level="INFO">@{list_allurl} = [ https://th-th.facebook.com/KasetsartUniversity | https://my.ku.th/login | https://en.wikipedia.org/wiki/Kasetsart_University ]</msg>
+<status status="PASS" starttime="20220426 18:16:55.484" endtime="20220426 18:16:55.484"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${len}</var>
+<arg>${list_alllink}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20220426 18:16:55.484" level="INFO">Length is 3</msg>
+<msg timestamp="20220426 18:16:55.484" level="INFO">${len} = 3</msg>
+<status status="PASS" starttime="20220426 18:16:55.484" endtime="20220426 18:16:55.484"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${index}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220426 18:16:55.484" level="INFO">${index} = 0</msg>
+<status status="PASS" starttime="20220426 18:16:55.484" endtime="20220426 18:16:55.484"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${link}</var>
+<value>${len}</value>
+<iter>
+<var name="${link}">0</var>
+<if>
+<branch type="IF" condition="${link} != 1">
+<kw name="Click" library="Browser">
+<arg>${list_alllink}[${link}]</arg>
+<arg>delay=0.5s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220426 18:16:55.484" endtime="20220426 18:16:56.909"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${list_alllink}[${link}]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220426 18:16:56.914" level="INFO">(//*[@id="rso"]/div//h3[@class="LC20lb MBeuO DKV0Md"])[2]</msg>
+<status status="PASS" starttime="20220426 18:16:56.909" endtime="20220426 18:16:56.914"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220426 18:17:01.959" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220426 18:16:56.914" endtime="20220426 18:17:01.959"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<var>${url}</var>
+<arg>==</arg>
+<arg>${list_allurl}[${index}]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<msg timestamp="20220426 18:17:01.974" level="INFO">${url} = https://th-th.facebook.com/KasetsartUniversity</msg>
+<status status="PASS" starttime="20220426 18:17:01.959" endtime="20220426 18:17:01.974"/>
+</kw>
+<kw name="Go Back" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the previous page in history.</doc>
+<msg timestamp="20220426 18:17:05.715" level="INFO">Did Go Back</msg>
+<status status="PASS" starttime="20220426 18:17:01.979" endtime="20220426 18:17:05.715"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${txt_topsearch}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220426 18:17:06.104" level="INFO">Waited for Element with selector //*[@id="tsf"]//*[@name="q"] at state visible</msg>
+<status status="PASS" starttime="20220426 18:17:05.715" endtime="20220426 18:17:06.104"/>
+</kw>
+<status status="PASS" starttime="20220426 18:16:55.484" endtime="20220426 18:17:06.104"/>
+</branch>
+<status status="PASS" starttime="20220426 18:16:55.484" endtime="20220426 18:17:06.104"/>
+</if>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220426 18:17:06.104" level="INFO">${index} = 1</msg>
+<status status="PASS" starttime="20220426 18:17:06.104" endtime="20220426 18:17:06.104"/>
+</kw>
+<status status="PASS" starttime="20220426 18:16:55.484" endtime="20220426 18:17:06.104"/>
+</iter>
+<iter>
+<var name="${link}">1</var>
+<if>
+<branch type="IF" condition="${link} != 1">
+<kw name="Click" library="Browser">
+<arg>${list_alllink}[${link}]</arg>
+<arg>delay=0.5s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" starttime="20220426 18:17:06.109" endtime="20220426 18:17:06.109"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${list_alllink}[${link}]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220426 18:17:06.109" endtime="20220426 18:17:06.109"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220426 18:17:06.109" endtime="20220426 18:17:06.109"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<var>${url}</var>
+<arg>==</arg>
+<arg>${list_allurl}[${index}]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="NOT RUN" starttime="20220426 18:17:06.109" endtime="20220426 18:17:06.109"/>
+</kw>
+<kw name="Go Back" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the previous page in history.</doc>
+<status status="NOT RUN" starttime="20220426 18:17:06.109" endtime="20220426 18:17:06.109"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${txt_topsearch}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" starttime="20220426 18:17:06.109" endtime="20220426 18:17:06.109"/>
+</kw>
+<status status="NOT RUN" starttime="20220426 18:17:06.108" endtime="20220426 18:17:06.109"/>
+</branch>
+<status status="PASS" starttime="20220426 18:17:06.104" endtime="20220426 18:17:06.109"/>
+</if>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220426 18:17:06.109" level="INFO">${index} = 2</msg>
+<status status="PASS" starttime="20220426 18:17:06.109" endtime="20220426 18:17:06.109"/>
+</kw>
+<status status="PASS" starttime="20220426 18:17:06.104" endtime="20220426 18:17:06.109"/>
+</iter>
+<iter>
+<var name="${link}">2</var>
+<if>
+<branch type="IF" condition="${link} != 1">
+<kw name="Click" library="Browser">
+<arg>${list_alllink}[${link}]</arg>
+<arg>delay=0.5s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220426 18:17:06.109" endtime="20220426 18:17:07.553"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${list_alllink}[${link}]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220426 18:17:07.553" level="INFO">(//*[@id="rso"]/div//h3[@class="LC20lb MBeuO DKV0Md"])[4]</msg>
+<status status="PASS" starttime="20220426 18:17:07.553" endtime="20220426 18:17:07.553"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220426 18:17:12.558" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220426 18:17:07.553" endtime="20220426 18:17:12.559"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<var>${url}</var>
+<arg>==</arg>
+<arg>${list_allurl}[${index}]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<msg timestamp="20220426 18:17:12.564" level="INFO">${url} = https://en.wikipedia.org/wiki/Kasetsart_University</msg>
+<status status="PASS" starttime="20220426 18:17:12.559" endtime="20220426 18:17:12.564"/>
+</kw>
+<kw name="Go Back" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the previous page in history.</doc>
+<msg timestamp="20220426 18:17:17.029" level="INFO">Did Go Back</msg>
+<status status="PASS" starttime="20220426 18:17:12.564" endtime="20220426 18:17:17.030"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${txt_topsearch}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220426 18:17:17.484" level="INFO">Waited for Element with selector //*[@id="tsf"]//*[@name="q"] at state visible</msg>
+<status status="PASS" starttime="20220426 18:17:17.030" endtime="20220426 18:17:17.484"/>
+</kw>
+<status status="PASS" starttime="20220426 18:17:06.109" endtime="20220426 18:17:17.484"/>
+</branch>
+<status status="PASS" starttime="20220426 18:17:06.109" endtime="20220426 18:17:17.484"/>
+</if>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220426 18:17:17.484" level="INFO">${index} = 3</msg>
+<status status="PASS" starttime="20220426 18:17:17.484" endtime="20220426 18:17:17.484"/>
+</kw>
+<status status="PASS" starttime="20220426 18:17:06.109" endtime="20220426 18:17:17.489"/>
+</iter>
+<status status="PASS" starttime="20220426 18:16:55.484" endtime="20220426 18:17:17.522"/>
+</for>
+<status status="PASS" starttime="20220426 18:16:55.484" endtime="20220426 18:17:17.522"/>
+</kw>
+<status status="PASS" starttime="20220426 18:16:27.762" endtime="20220426 18:17:17.530">*HTML* &lt;span class="merge"&gt;Test has been re-executed and results merged.&lt;/span&gt;&lt;hr&gt;&lt;span class="new-status"&gt;New status:&lt;/span&gt; &lt;span class="pass"&gt;PASS&lt;/span&gt;&lt;br&gt;&lt;hr&gt;&lt;span class="old-status"&gt;Old status:&lt;/span&gt; &lt;span class="fail"&gt;FAIL&lt;/span&gt;&lt;br&gt;&lt;span class="old-message"&gt;Old message:&lt;/span&gt; Test added from merged output.&lt;hr&gt;URL '&lt;a href="https://my.ku.th/login"&gt;https://my.ku.th/login&lt;/a&gt;' (str) should be '&lt;a href="https://th-th.facebook.com/KasetsartUniversity"&gt;https://th-th.facebook.com/KasetsartUniversity&lt;/a&gt;' (str)&lt;br&gt;</status>
+</test>
+<status status="PASS" starttime="N/A" endtime="N/A" elapsedtime="156559"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Test1">Test1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

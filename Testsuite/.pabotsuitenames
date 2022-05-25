@@ -1,0 +1,9 @@
+datasources:40335bd8614cb5558c241508512cf705a87ad2e6
+commandlineoptions:bc991ea166259e72959205bbd728d3b2ca947d5c
+suitesfrom:no-suites-from-option
+file:e2a1b04bfa912028fb3b939d510d5fbf070e1822
+--test Test1.TC_001 Search Library Browser and open 1st link and verify page
+--test Test1.TC_002 Search Robot Framework and open 1st link and verify page
+--test Test1.TC_003 Search Kasetsart and open 3rd link and verify page
+--test Test1.TC_004 Search Kasetsart and open 3rd, 4th and 5th link
+--test Test1.TC_005 Search Kasetsart University and มหาวิทยาลัยเกษตรศาสตร์ correct and verify result webpage

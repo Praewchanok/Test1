@@ -1,0 +1,49 @@
+{"level":30,"time":"2022-04-26T11:26:55.627Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Listening on 49849"}
+{"level":30,"time":"2022-04-26T11:26:55.770Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2022-04-26T11:26:55.772Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2022-04-26T11:26:55.794Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2022-04-26T11:26:55.795Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2022-04-26T11:26:55.843Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2022-04-26T11:27:12.850Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"End of node method newBrowser"}
+{"level":30,"time":"2022-04-26T11:27:12.888Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Start of node method newPage"}
+{"level":30,"time":"2022-04-26T11:27:12.888Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2022-04-26T11:27:13.131Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Changed active context"}
+{"level":30,"time":"2022-04-26T11:27:25.216Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Video path: undefined"}
+{"level":30,"time":"2022-04-26T11:27:25.217Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Changed active page"}
+{"level":30,"time":"2022-04-26T11:27:35.228Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Error of node method  newPage"}
+================= Original suppressed error =================
+page.goto: Timeout 10000ms exceeded.
+=========================== logs ===========================
+navigating to "https://www.google.co.th/", waiting until "load"
+============================================================
+    at newPage (C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\Browser\wrapper\index.js:7545:18)
+    at async PlaywrightServer.newPage (C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\Browser\wrapper\index.js:7770:28) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2022-04-26T11:27:35.250Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2022-04-26T11:27:35.252Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Error of node method  takeScreenshot"}
+================= Original suppressed error =================
+Error: Tried to take screenshot, but no page was open.
+    at exists (C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\Browser\wrapper\index.js:6290:11)
+    at takeScreenshot (C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\Browser\wrapper\index.js:6336:5)
+    at PlaywrightServer.takeScreenshot (C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\Browser\wrapper\index.js:7770:34)
+    at handleUnary (C:\Users\Admin\AppData\Local\Programs\Python\Python310\lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:674:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+=============================================================
+{"level":30,"time":"2022-04-26T11:27:35.405Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2022-04-26T11:27:35.406Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2022-04-26T11:27:35.416Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Changed active context"}
+{"level":30,"time":"2022-04-26T11:27:35.423Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2022-04-26T11:27:35.423Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2022-04-26T11:27:35.492Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Start of node method switchBrowser"}
+{"level":30,"time":"2022-04-26T11:27:35.493Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"End of node method switchBrowser"}
+{"level":30,"time":"2022-04-26T11:27:35.498Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Start of node method switchBrowser"}
+{"level":30,"time":"2022-04-26T11:27:35.498Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"End of node method switchBrowser"}
+{"level":30,"time":"2022-04-26T11:27:35.507Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Changed active context"}
+{"level":30,"time":"2022-04-26T11:27:35.514Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Start of node method closeContext"}
+{"level":30,"time":"2022-04-26T11:27:36.519Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"End of node method closeContext"}
+{"level":30,"time":"2022-04-26T11:27:36.636Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2022-04-26T11:27:36.636Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2022-04-26T11:27:36.663Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2022-04-26T11:27:52.252Z","pid":7468,"hostname":"DESKTOP-CG2VD6F","msg":"End of node method closeAllBrowsers"}

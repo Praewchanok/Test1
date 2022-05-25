@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220426 18:28:07.040" rpa="false" schemaversion="2">
+<suite id="s1" name="Test1" source="C:\Users\Admin\OneDrive\เดสก์ท็อป\Test\Test1\Testsuite\test1.robot">
+<test id="s1-t1" name="TC_004 Search Kasetsart and open 3rd, 4th and 5th link">
+<kw name="Open Webpage" library="Keywords_test1">
+<kw name="New Browser" library="Browser">
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220426 18:28:12.470" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\Users\\Admin\\OneDrive\\\u0e40\u0e14\u0e2a\u0e01\u0e4c\u0e17\u0e47\u0e2d\u0e1b\\Test\\Test1\\Testsuite\\Result\\pabot_results\\3\\browser\\traces\\296f3930-5ddc-42bd-a405-e995eae7df71"}</msg>
+<msg timestamp="20220426 18:28:33.145" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\Users\\Admin\\OneDrive\\เดสก์ท็อป\\Test\\Test1\\Testsuite\\Result\\pabot_results\\3\\browser\\traces\\296f3930-5ddc-42bd-a405-e995eae7df71"}</msg>
+<status status="PASS" starttime="20220426 18:28:12.467" endtime="20220426 18:28:33.149"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220426 18:28:49.325" level="INFO">Successfully initialized new page object and opened url: https://www.google.co.th/</msg>
+<msg timestamp="20220426 18:28:49.325" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20220426 18:28:33.150" endtime="20220426 18:28:49.325"/>
+</kw>
+<status status="PASS" starttime="20220426 18:28:12.467" endtime="20220426 18:28:49.326"/>
+</kw>
+<kw name="Input Text Box" library="Keywords_test1">
+<arg>Kasetsart University</arg>
+<kw name="Type Text" library="Browser">
+<arg>${txt_search}</arg>
+<arg>${Text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220426 18:28:49.327" level="INFO">Types the text 'Kasetsart University' in the given field.</msg>
+<status status="PASS" starttime="20220426 18:28:49.327" endtime="20220426 18:28:50.163"/>
+</kw>
+<status status="PASS" starttime="20220426 18:28:49.326" endtime="20220426 18:28:50.163"/>
+</kw>
+<kw name="Enter Search" library="Keywords_test1">
+<kw name="Press Keys" library="Browser">
+<arg>${txt_search}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" starttime="20220426 18:28:50.165" endtime="20220426 18:28:50.751"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220426 18:28:55.754" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220426 18:28:50.752" endtime="20220426 18:28:55.754"/>
+</kw>
+<status status="PASS" starttime="20220426 18:28:50.164" endtime="20220426 18:28:55.755"/>
+</kw>
+<kw name="In range" library="Keywords_test1">
+<kw name="Create List" library="BuiltIn">
+<var>@{list_alllink}</var>
+<arg>${lbl_2ndlink}</arg>
+<arg>${lbl_3rdlink}</arg>
+<arg>${lbl_4thlink}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220426 18:28:55.758" level="INFO">@{list_alllink} = [ (//*[@id="rso"]/div//h3[@class="LC20lb MBeuO DKV0Md"])[2] | (//*[@id="rso"]/div//h3[@class="LC20lb MBeuO DKV0Md"])[3] | (//*[@id="rso"]/div//h3[@class="LC20lb MBeuO DKV0Md"])[4] ]</msg>
+<status status="PASS" starttime="20220426 18:28:55.757" endtime="20220426 18:28:55.758"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{list_allurl}</var>
+<arg>${url_2ndlink}</arg>
+<arg>${url_3rdlink}</arg>
+<arg>${url_4thlink}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220426 18:28:55.759" level="INFO">@{list_allurl} = [ https://th-th.facebook.com/KasetsartUniversity | https://my.ku.th/login | https://en.wikipedia.org/wiki/Kasetsart_University ]</msg>
+<status status="PASS" starttime="20220426 18:28:55.758" endtime="20220426 18:28:55.759"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${len}</var>
+<arg>${list_alllink}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20220426 18:28:55.760" level="INFO">Length is 3</msg>
+<msg timestamp="20220426 18:28:55.760" level="INFO">${len} = 3</msg>
+<status status="PASS" starttime="20220426 18:28:55.759" endtime="20220426 18:28:55.760"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${index}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220426 18:28:55.761" level="INFO">${index} = 0</msg>
+<status status="PASS" starttime="20220426 18:28:55.760" endtime="20220426 18:28:55.761"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${link}</var>
+<value>${len}</value>
+<iter>
+<var name="${link}">0</var>
+<if>
+<branch type="IF" condition="${link} != 1">
+<kw name="Click" library="Browser">
+<arg>${list_alllink}[${link}]</arg>
+<arg>delay=0.5s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220426 18:28:55.763" endtime="20220426 18:28:58.884"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${list_alllink}[${link}]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220426 18:28:58.886" level="INFO">(//*[@id="rso"]/div//h3[@class="LC20lb MBeuO DKV0Md"])[2]</msg>
+<status status="PASS" starttime="20220426 18:28:58.885" endtime="20220426 18:28:58.886"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220426 18:29:03.889" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220426 18:28:58.886" endtime="20220426 18:29:03.919"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<var>${url}</var>
+<arg>==</arg>
+<arg>${list_allurl}[${index}]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<msg timestamp="20220426 18:29:03.972" level="INFO">${url} = https://th-th.facebook.com/KasetsartUniversity</msg>
+<status status="PASS" starttime="20220426 18:29:03.919" endtime="20220426 18:29:03.972"/>
+</kw>
+<kw name="Go Back" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the previous page in history.</doc>
+<msg timestamp="20220426 18:29:06.412" level="INFO">Did Go Back</msg>
+<status status="PASS" starttime="20220426 18:29:03.972" endtime="20220426 18:29:06.412"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${txt_topsearch}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220426 18:29:06.500" level="INFO">Waited for Element with selector //*[@id="tsf"]//*[@name="q"] at state visible</msg>
+<status status="PASS" starttime="20220426 18:29:06.413" endtime="20220426 18:29:06.500"/>
+</kw>
+<status status="PASS" starttime="20220426 18:28:55.762" endtime="20220426 18:29:06.500"/>
+</branch>
+<status status="PASS" starttime="20220426 18:28:55.762" endtime="20220426 18:29:06.500"/>
+</if>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220426 18:29:06.506" level="INFO">${index} = 1</msg>
+<status status="PASS" starttime="20220426 18:29:06.500" endtime="20220426 18:29:06.506"/>
+</kw>
+<status status="PASS" starttime="20220426 18:28:55.762" endtime="20220426 18:29:06.506"/>
+</iter>
+<iter>
+<var name="${link}">1</var>
+<if>
+<branch type="IF" condition="${link} != 1">
+<kw name="Click" library="Browser">
+<arg>${list_alllink}[${link}]</arg>
+<arg>delay=0.5s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" starttime="20220426 18:29:06.508" endtime="20220426 18:29:06.508"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${list_alllink}[${link}]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220426 18:29:06.509" endtime="20220426 18:29:06.509"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220426 18:29:06.509" endtime="20220426 18:29:06.509"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<var>${url}</var>
+<arg>==</arg>
+<arg>${list_allurl}[${index}]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="NOT RUN" starttime="20220426 18:29:06.510" endtime="20220426 18:29:06.510"/>
+</kw>
+<kw name="Go Back" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the previous page in history.</doc>
+<status status="NOT RUN" starttime="20220426 18:29:06.510" endtime="20220426 18:29:06.511"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${txt_topsearch}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" starttime="20220426 18:29:06.511" endtime="20220426 18:29:06.511"/>
+</kw>
+<status status="NOT RUN" starttime="20220426 18:29:06.508" endtime="20220426 18:29:06.511"/>
+</branch>
+<status status="PASS" starttime="20220426 18:29:06.508" endtime="20220426 18:29:06.512"/>
+</if>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220426 18:29:06.512" level="INFO">${index} = 2</msg>
+<status status="PASS" starttime="20220426 18:29:06.512" endtime="20220426 18:29:06.512"/>
+</kw>
+<status status="PASS" starttime="20220426 18:29:06.507" endtime="20220426 18:29:06.512"/>
+</iter>
+<iter>
+<var name="${link}">2</var>
+<if>
+<branch type="IF" condition="${link} != 1">
+<kw name="Click" library="Browser">
+<arg>${list_alllink}[${link}]</arg>
+<arg>delay=0.5s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220426 18:29:06.513" endtime="20220426 18:29:07.674"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${list_alllink}[${link}]</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220426 18:29:07.676" level="INFO">(//*[@id="rso"]/div//h3[@class="LC20lb MBeuO DKV0Md"])[4]</msg>
+<status status="PASS" starttime="20220426 18:29:07.675" endtime="20220426 18:29:07.676"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220426 18:29:12.692" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220426 18:29:07.677" endtime="20220426 18:29:12.692"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<var>${url}</var>
+<arg>==</arg>
+<arg>${list_allurl}[${index}]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<msg timestamp="20220426 18:29:12.692" level="INFO">${url} = https://en.wikipedia.org/wiki/Kasetsart_University</msg>
+<status status="PASS" starttime="20220426 18:29:12.692" endtime="20220426 18:29:12.692"/>
+</kw>
+<kw name="Go Back" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the previous page in history.</doc>
+<msg timestamp="20220426 18:29:15.614" level="INFO">Did Go Back</msg>
+<status status="PASS" starttime="20220426 18:29:12.692" endtime="20220426 18:29:15.615"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${txt_topsearch}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220426 18:29:15.772" level="INFO">Waited for Element with selector //*[@id="tsf"]//*[@name="q"] at state visible</msg>
+<status status="PASS" starttime="20220426 18:29:15.615" endtime="20220426 18:29:15.772"/>
+</kw>
+<status status="PASS" starttime="20220426 18:29:06.513" endtime="20220426 18:29:15.772"/>
+</branch>
+<status status="PASS" starttime="20220426 18:29:06.513" endtime="20220426 18:29:15.772"/>
+</if>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220426 18:29:15.772" level="INFO">${index} = 3</msg>
+<status status="PASS" starttime="20220426 18:29:15.772" endtime="20220426 18:29:15.772"/>
+</kw>
+<status status="PASS" starttime="20220426 18:29:06.513" endtime="20220426 18:29:15.772"/>
+</iter>
+<status status="PASS" starttime="20220426 18:28:55.761" endtime="20220426 18:29:15.772"/>
+</for>
+<status status="PASS" starttime="20220426 18:28:55.755" endtime="20220426 18:29:15.772"/>
+</kw>
+<status status="PASS" starttime="20220426 18:28:12.459" endtime="20220426 18:29:15.772"/>
+</test>
+<status status="PASS" starttime="20220426 18:28:07.084" endtime="20220426 18:29:16.224"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test1">Test1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
